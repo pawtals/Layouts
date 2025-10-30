@@ -1,5 +1,14 @@
 @import url("http://localhost:57391/dist/Endfield/style/body.css");
 
+body main,
+body footer {
+    background: none;
+}
+
+body .container .row.profile .col.right {
+    display: contents;
+}
+
 body .container nav {
     display: grid !important;
     position: sticky;
