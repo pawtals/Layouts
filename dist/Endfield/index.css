@@ -1,0 +1,35 @@
+@import url("http://localhost:57391/dist/Endfield/style/body.css");
+body .container nav {
+  display: grid !important;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  padding: 1rem 4rem;
+  grid-template-columns: 1fr 6fr 1fr;
+}
+body .container nav .top {
+  display: contents !important;
+}
+body .container nav .top .center {
+  display: none;
+}
+body .container nav .top .right {
+  grid-area: 1/3;
+}
+body .container nav .links {
+  display: flex;
+}
+body .container nav .links li {
+  all: unset;
+}
+body .container nav .links li a {
+  all: unset;
+}
+body .container nav .links li::after {
+  content: none;
+}
+body .container nav > * {
+  background: none;
+}
+
+/*# sourceMappingURL=index.css.map */

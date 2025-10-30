@@ -1,2 +1,3 @@
 node_modules/
 views/Profile/Alterations/*
+!views/Profile/Alterations/README.md
