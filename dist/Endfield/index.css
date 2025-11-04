@@ -1,44 +1,54 @@
-@import url("http://localhost:57391/dist/Endfield/style/body.css");
+@import url("http://localhost:57391/dist/Endfield/style/body-computer.css") not screen and (orientation: portrait);
+@import url("http://localhost:57391/dist/Endfield/style/body-phone.css") screen and (orientation: portrait);
 body main,
 body footer {
   background: none;
 }
 
-body .container .row.profile .col.right {
+body .container .row.profile > * {
   display: contents;
 }
 
-body .container nav {
-  display: grid !important;
-  position: sticky;
-  width: 100%;
-  top: 0;
-  padding: 1rem 4rem;
-  grid-template-columns: 1fr 6fr 1fr;
+:root {
+  --color-ef-p: #fffa00;
+  --color-t: #ffffff;
+  --color-t-secondary: #101010;
+  --text-color: #191919;
+  --text-color-secondary: #ffffff;
 }
-body .container nav .top {
-  display: contents !important;
+
+@media (min-width: 2200px) {
+  :root {
+    --xxl: 12rem;
+    --xl: 8rem;
+    --l: 3rem;
+    --m: 2rem;
+    --s: 1rem;
+    --xs: 0.6rem
+    --xxs: 0.3rem;
+  }
 }
-body .container nav .top .center {
-  display: none;
+@media (min-width: 1000px) {
+  :root {
+    --xxl: 8rem;
+    --xl: 4rem;
+    --l: 2rem;
+    --m: 1rem;
+    --s: 0.75rem;
+    --xs: 0.4rem
+    --xxs: 0.2rem;
+  }
 }
-body .container nav .top .right {
-  grid-area: 1/3;
-}
-body .container nav .links {
-  display: flex;
-}
-body .container nav .links li {
-  all: unset;
-}
-body .container nav .links li a {
-  all: unset;
-}
-body .container nav .links li::after {
-  content: none;
-}
-body .container nav > * {
-  background: none;
+@media not (min-width: 1000px) {
+  :root {
+    --xxl: 4rem;
+    --xl: 2rem;
+    --l: 1rem;
+    --m: 0.75rem;
+    --s: 0.5rem;
+    --xs: 0.3rem
+    --xxs: 0.15rem;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

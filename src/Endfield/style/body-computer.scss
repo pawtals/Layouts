@@ -1,0 +1,31 @@
+.col>*{outline:4px solid black!important;} body nav, body footer {display:none!important;} /*indev*/
+
+.container {
+    width: 100% !important;
+    overflow: hidden auto;
+}
+
+h1 {
+    font-size: var(--xl)
+}
+
+h2, h3 {
+    font-size: var(--xl);
+}
+
+h4 {
+    font-size: var(--l)
+}
+
+html p {
+    font-size: var(--m) !important;
+}
+
+/*
+Create reference website's column sections.
+*/
+
+.col > *:not(span) {
+    height: calc(var(--xxl) * 4);
+    position: relative;
+}
