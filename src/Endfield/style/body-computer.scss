@@ -5,20 +5,28 @@
     overflow: hidden auto;
 }
 
+.row.profile {
+    position: relative;
+}
+
 h1 {
-    font-size: var(--xl)
+    font-size: var(--xl);
+    color: var(--text-color);
 }
 
 h2, h3 {
     font-size: var(--xl);
+    color: var(--text-color);
 }
 
 h4 {
-    font-size: var(--l)
+    font-size: var(--l);
+    color: var(--text-color);
 }
 
 html p {
-    font-size: var(--m) !important;
+    font-size: var(--m);
+    color: var(--text-color);
 }
 
 /*
@@ -28,4 +36,146 @@ Create reference website's column sections.
 .col > *:not(span) {
     height: calc(var(--xxl) * 4);
     position: relative;
+    margin: 0 !important;
+}
+
+/*
+Turn name span into hero section
+- splice profile info into this
+*/
+
+html body .container .row.profile span[itemprop="name"] {
+    background: center / cover url("https://images.freecreatives.com/wp-content/uploads/2016/03/White-Abstract-Wallpaper-1.jpg"); /* turn into var */
+    position: relative;
+    display: block;
+    height: 100vh;
+    margin: 0;
+    h1 {
+        font-size: var(--xxl);
+        position: absolute;
+        margin: 0;
+        left: var(--xxl);
+        top: calc(80% - var(--xxl));
+        translate: 0 calc(var(--m)*-1); /* add margin on absolute position */
+        mix-blend-mode: soft-light;
+        color: var(--text-color-secondary);
+        z-index: 2;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        border-bottom: 2px solid var(--color-t);
+        width: 70%;
+        top: 80%;
+        left: 0;
+        mask: linear-gradient(90deg, white 70%, transparent);
+        mix-blend-mode: soft-light;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        border-bottom: 6px solid var(--color-ef-p);
+        width: var(--xxl);
+        top: 80%;
+        left: var(--xxl);
+        translate: 0 -2px;
+    }
+}
+
+.col .general-about {
+    position: absolute !important;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100vh;
+    .profile-pic {
+        position: absolute;
+        bottom: 20%;
+        left: var(--xl);
+        margin: 0;
+        width: calc(var(--xl) * 3);
+        height: calc(var(--xl) * 3);
+        mix-blend-mode: overlay;
+        translate: calc(var(--l) * -1) calc(var(--l) * -1);
+        z-index: 1;
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+}
+
+.col .general-about .details {
+    display: flex;
+    text-wrap: nowrap;
+    position: absolute;
+    left: var(--xxl);
+    bottom: var(--m);
+    width: 100%;
+    gap: 1rem;
+    p {
+        font-size: var(--xs);
+        color: var(--text-color-secondary);
+        filter: brightness(0.7);
+        &::before {
+            content: ">> ";
+        }
+    }
+    br {display: none;} /* br in time.ago causing issue */
+}
+
+/*
+shift first row of interactions on contact to be bound to hero
+*/
+
+.contact .inner .f-row:nth-child(1) {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+    .f-col {
+        position: absolute;
+        display: flex;
+        top: calc(80% + var(--l));
+
+        a {
+            padding: var(--l) var(--xl);
+            font-size: var(--m);
+            border-radius: 0.3rem;
+            box-shadow: 0px 0px 6px rgba(0,0,0, 0.4);
+        }
+
+        img {
+            margin-right: 2rem;
+        }
+
+        &:nth-child(1) {
+            left: calc(var(--xxl));
+            a {
+                color: var(--text-color);
+                background: var(--color-ef-p);
+            }
+        }
+
+        &:nth-child(2) {
+            left: calc(var(--xxl) + var(--l));
+            a {
+                background: var(--color-t);
+            }
+            translate: 100% 0;
+        }
+    }
+}
+
+/*
+contact section
+*/
+
+.row.profile .col .contact {
+    position: unset;
 }

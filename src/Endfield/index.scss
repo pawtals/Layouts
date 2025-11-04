@@ -5,6 +5,7 @@
 body main,
 body footer {
     background: none;
+    padding: 0;
 }
 
 body .container .row.profile > * {
@@ -31,7 +32,7 @@ body .container .row.profile > * {
     }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1440px) {
     :root {
         --xxl: 8rem;
         --xl: 4rem;
@@ -43,7 +44,7 @@ body .container .row.profile > * {
     }
 }
 
-@media not (min-width: 1000px) {
+@media not (min-width: 1440px) {
     :root {
         --xxl: 4rem;
         --xl: 2rem;
