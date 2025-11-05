@@ -1,4 +1,4 @@
-.col>*{outline:4px solid black!important;} body nav, body footer {display:none!important;} /*indev*/
+/* .col>*{outline:4px solid black!important;} body nav, body footer {display:none!important;} /*indev*/
 
 .container {
     width: 100% !important;
@@ -34,7 +34,7 @@ Create reference website's column sections.
 */
 
 .col > *:not(span) {
-    height: calc(var(--xxl) * 4);
+    height: calc(var(--xxl) * 7);
     position: relative;
     margin: 0 !important;
 }
@@ -45,6 +45,7 @@ Turn name span into hero section
 */
 
 html body .container .row.profile span[itemprop="name"] {
+    /* https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/kv.4584e64b.jpg */
     background: center / cover url("https://images.freecreatives.com/wp-content/uploads/2016/03/White-Abstract-Wallpaper-1.jpg"); /* turn into var */
     position: relative;
     display: block;
@@ -118,7 +119,7 @@ html body .container .row.profile span[itemprop="name"] {
     width: 100%;
     gap: 1rem;
     p {
-        font-size: var(--xs);
+        font-size: var(--s);
         color: var(--text-color-secondary);
         filter: brightness(0.7);
         &::before {
@@ -144,8 +145,8 @@ shift first row of interactions on contact to be bound to hero
         top: calc(80% + var(--l));
 
         a {
-            padding: var(--l) var(--xl);
-            font-size: var(--m);
+            padding: var(--l) var(--l);
+            font-size: var(--l);
             border-radius: 0.3rem;
             box-shadow: 0px 0px 6px rgba(0,0,0, 0.4);
         }
@@ -169,6 +170,171 @@ shift first row of interactions on contact to be bound to hero
             }
             translate: 100% 0;
         }
+    }
+}
+
+/*
+Create milestone copy for mood | add splash art for effect and morph text
+*/
+
+.row.profile .col .mood {
+    padding-left: calc(var(--xl) * 1);
+    padding-right: calc(var(--xl) * 6);
+    display: flex;
+    p:nth-child(1) {
+        position: absolute;
+        left: calc(var(--xl) * 2);
+        top: var(--xxl);
+        font-size: var(--l);
+        font-weight: 800;
+        text-transform: uppercase;
+
+        b {
+            position: relative;
+            display: inline-block;
+            font-weight: 400;
+            background: var(--color-t-100);
+            padding: var(--xs);
+            display: flex;
+            text-transform: uppercase;
+            justify-content: right;
+            font-size: var(--m);
+            max-width: 14ch;
+
+            &::before {
+                content: '';
+                background: left center / contain no-repeat url("https://i.ibb.co/YFQWqnXz/small-signature-1.png");
+                position: absolute;
+                width: var(--xl);
+                height: var(--m);
+                bottom: 100%;
+                left: 0;
+            }
+        }
+    }
+
+    p:nth-child(2) {
+        display: contents;
+
+        /* image */
+        &::after {
+            content: '';
+            position: absolute;
+            top: var(--m);
+            right: 30%;
+            height: calc(var(--xxl) * 6);
+            width: calc(var(--xxl) * 6);
+            mask: linear-gradient(180deg, white 40%, transparent 80%);
+            background: center / contain no-repeat url("https://endfield.wiki.gg/images/Gilberta_Splash_Art.png?57eaad");
+            pointer-events: none;
+        }
+
+        /* section image */
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: calc(var(--xxl) * 3);
+            height: 80%;
+            order: 2;
+            translate: 0 -50%;
+            top: 50%;
+            right: var(--l);
+            box-shadow: 2px 4px 32px rgb(from black r g b / 50%);
+
+            background:
+                linear-gradient(180deg, transparent 60%, var(--color-ef-p)),
+                40% 30% / 300%  no-repeat url("https://endfield.wiki.gg/images/Angelina.png"),
+                left top / cover url("https://i.ibb.co/QFM36t7L/major-signature-1.png");
+        }
+    } /* gut useless paragraph for psuedoelements :) */
+
+    p:nth-child(2) b {
+        flex: 1;
+        font-size: 0;
+        display: flex;
+        height: 100%;
+        padding: var(--xxl) var(--xl);
+        align-items: end;
+        justify-content: space-evenly;
+        position: relative;
+        /* useless filler text removal */
+        a {
+            flex: 1;
+            font-size: var(--l);
+            color: var(--text-color);
+            display: inline-flex;
+            border-bottom: var(--m) solid var(--text-color);
+            font-weight: 800;
+            align-items: center;
+            flex-direction: column;
+            text-transform: uppercase;
+            &::after {
+                content: '';
+                display: block;
+                height: 1rem;
+                width: 100%;
+                background: repeating-linear-gradient(45deg, var(--color-ef-p) 0px, var(--color-ef-p) 4px, var(--color-t) 4px, var(--color-t) 8px);
+                margin-bottom: var(--xs);
+            }
+
+            &::before {
+                content: '';
+                display: inline-block;
+                width: var(--xxl);
+                height: var(--xxl);
+                border: 1px solid red;
+            }
+            &:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+
+        &::after {
+            content: '';
+            background: bottom / contain no-repeat url("https://i.ibb.co/kFVXCTJ/large-signature.png");
+            position: absolute;
+            bottom: calc(var(--xxl) * 3);
+            left: var(--xl);
+            width: var(--xxl);
+            height: var(--xxl);
+        }
+
+        &::before {
+            content: '';
+            background: center / contain no-repeat url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/color-bar.1f0aa038.png");
+            position: absolute;
+            bottom: calc(var(--xxl) * 2);
+            left: var(--xl);
+            width: var(--m);
+            height: var(--xxl);
+        }
+    }
+
+    &::before {
+        content: '';
+        background: center / contain url("https://icon-library.com/images/open-book-icon/open-book-icon-14.jpg"), var(--text-color);
+        position: absolute;
+        top: calc(var(--xxl) - var(--l));
+        translate: calc(var(--m) * -1) -50%;
+        left: var(--xxl);
+        height: var(--xxl);
+        width: var(--xxl);
+        filter: invert(1);
+    }
+
+    &::after {
+        content: '';
+        background: center / contain no-repeat url('https://i.ibb.co/dsPrWh92/layout-motiff-signature.png');
+        position: absolute;
+        top: calc(var(--xxl) * 3);
+        translate: calc(var(--m) * -1) -50%;
+        width: calc(var(--xxl) * 3);
+        height: calc(var(--xxl) * 3);
+        filter: drop-shadow(2px 2px 4px black);
+        font-weight: 800;
+        font-size: var(--l);
+        right: calc(30% + (var(--xxl) * 3));
     }
 }
 

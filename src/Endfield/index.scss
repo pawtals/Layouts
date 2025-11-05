@@ -12,9 +12,15 @@ body .container .row.profile > * {
     display: contents;
 }
 
+.container {
+    background: var(--color-t);
+}
+
 :root {
     --color-ef-p: #fffa00;
     --color-t: #ffffff;
+    --color-t-100: #f0f0f0;
+    --color-t-200: #a0a0a0;
     --color-t-secondary: #101010;
     --text-color: #191919;
     --text-color-secondary: #ffffff;
@@ -27,7 +33,7 @@ body .container .row.profile > * {
         --l: 3rem;
         --m: 2rem;
         --s: 1rem;
-        --xs: 0.6rem
+        --xs: 0.6rem;
         --xxs: 0.3rem;
     }
 }
@@ -39,7 +45,7 @@ body .container .row.profile > * {
         --l: 2rem;
         --m: 1rem;
         --s: 0.75rem;
-        --xs: 0.4rem
+        --xs: 0.4rem;
         --xxs: 0.2rem;
     }
 }
