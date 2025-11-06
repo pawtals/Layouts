@@ -240,7 +240,6 @@ Create milestone copy for mood | add splash art for effect and morph text
             translate: 0 -50%;
             top: 50%;
             right: var(--l);
-            box-shadow: 2px 4px 32px rgb(from black r g b / 50%);
 
             background:
                 linear-gradient(180deg, transparent 60%, var(--color-ef-p)),
@@ -331,7 +330,7 @@ Create milestone copy for mood | add splash art for effect and morph text
         translate: calc(var(--m) * -1) -50%;
         width: calc(var(--xxl) * 3);
         height: calc(var(--xxl) * 3);
-        filter: drop-shadow(2px 2px 4px black);
+        filter: drop-shadow(2px 2px 4px rgb(from black r g b / 50%));
         font-weight: 800;
         font-size: var(--l);
         right: calc(30% + (var(--xxl) * 3));
@@ -344,4 +343,145 @@ contact section
 
 .row.profile .col .contact {
     position: unset;
+}
+
+.row.profile .col .contact {
+    display: grid !important;
+    grid-template-rows: var(--xxl) 1fr;
+    border: none;
+    .heading {
+        border-bottom: var(--m) solid var(--color-t);
+        background: none;
+        padding-left: calc(var(--xxl) * 2);
+        position: relative;
+
+        h4 {
+            position: relative;
+            top: 40%;
+            text-transform: uppercase;
+            z-index: 2;
+            &::after {
+                content: 'WAYS OF CONTACTING ME';
+                display: block;
+                font-size: var(--s);
+                font-weight: 400;
+            }
+        }
+
+        &::after {
+            content: '';
+            background: center bottom / contain no-repeat url('https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/section_divider_icon_lore.6968c414.png');
+            width: calc(var(--xxl) * 1.8);
+            height: calc(var(--xxl) * 2);
+            position: absolute;
+            left: var(--s);
+            bottom: 0;
+            z-index: 1;
+        }
+
+        &::before {
+            content: '';
+            background: var(--color-ef-p);
+            width: 100%;
+            height: 70%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+    }
+    .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: var(--l) var(--l) var(--l) var(--xl);
+    }
+}
+
+.contact .inner .f-row:not(:nth-child(1)) {
+    padding: var(--m);
+    padding-top: var(--xl);
+    background: var(--color-t);
+    display: flex;
+    height: 30%;
+    margin: 0;
+    position: relative;
+    filter: drop-shadow(2px 2px 6px rgb(from black r g b / 40%));
+    gap: var(--m);
+    .f-col {
+        padding: var(--m);
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+
+        a {
+            font-size: var(--m);
+            background: center / 100% no-repeat url('https://web-static.hg-cdn.com/endfield/special/creators-application/assets/imgs/title-divider.4806d1.png');
+            padding: var(--s);
+            border-radius: var(--m);
+            color: var(--text-color-secondary);
+            img{display: none;}
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top:0;
+            left: 0;
+            width: var(--l);
+            height: var(--l);
+            background: center / contain no-repeat url('https://web-static.hg-cdn.com/endfield/special/creators-application/assets/imgs/title-icon-4.359920.png');
+        }
+
+        &::before {
+            content: 'URL';
+            color: var(--text-color-secondary);
+            text-shadow: -2px 2px 6px rgb(from black r g b / 20%);
+            font-size: var(--l);
+            background: repeating-linear-gradient(45deg, var(--color-t-200) 0px, var(--color-t-200) 4px, rgb(from var(--color-t-200) r g b / 50%) 4px, rgb(from var(--color-t-200) r g b / 50%) 8px);
+            border-radius: var(--m);
+            display: flex;
+            justify-content: right;
+            padding-right: var(--m);
+            mask: linear-gradient(270deg, white, transparent 50%);
+        }
+    }
+
+    &::after {
+        content: 'CONTACT ME';
+        font-size: var(--l);
+        position: absolute;
+        right: 100%;
+        writing-mode: vertical-lr;
+        background: repeating-linear-gradient(45deg, var(--color-t-200) 0px, var(--color-t-200) 2px, var(--color-t) 2px, var(--color-t) 4px);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        top: 0;
+        mask: linear-gradient(270deg, white, transparent);
+    }
+
+    &::before {
+        content: 'CONTACT';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        font-weight: 800;
+        font-size: var(--m);
+        background: repeating-linear-gradient(45deg, var(--color-ef-p) 0px, var(--color-ef-p) 3px, var(--color-t) 3px, var(--color-t) 6px);
+        padding: var(--s) 0 var(--s) var(--m);
+        box-sizing: border-box;
+    }
+}
+
+/*
+moving up url & info to fixed so they aren't in the way
+*/
+
+.url-info, .profile-info {
+    position: fixed !important;
+    top: 0; left: 0;
+    display: none !important; /* development */
 }
