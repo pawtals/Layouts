@@ -572,12 +572,22 @@ general table sect
 /*
 remove blog & blurbs due to redundancy
 just use big interest sections with <a> tags to your content
+
+also remove edit tags
+also remove second table for links
 */
 .blog-preview,
 .blurbs {
   display: none !important;
 }
 
+html body .container p.edit-link {
+  display: none !important;
+}
+
+html body .container .col.left .table-section:nth-last-of-type(1):nth-of-type(n + 2) {
+  display: none !important;
+} /* im so happy this is the solution to a problem which should have never existed ever in the history of man thank you An :D */
 /*
 friends display & amount
 */
@@ -607,30 +617,33 @@ main .col .friends:not(#comments) .inner > p span {
   left: 0;
   mask: linear-gradient(180deg, white, transparent);
   z-index: 1;
+  text-wrap: nowrap;
 }
 main .col .friends:not(#comments) .inner > p span::after {
   content: "FRIENDS";
   display: inline-block;
-  margin-left: var(--xxl);
+  margin-left: var(--xl);
 }
 main .col .friends:not(#comments) .friends-grid {
   display: flex;
   z-index: 2;
   position: relative;
-  padding: var(--xl);
   gap: var(--l);
   align-items: center;
   height: calc(var(--xxl) * 2);
+  width: 200%;
 }
 main .col .friends:not(#comments) .friends-grid .person {
   padding: 0;
   margin: 0;
-  width: var(--xxl);
-  height: var(--xxl);
+  width: calc(var(--xxl) * 2);
+  height: calc(var(--xxl) * 2);
   border-radius: 50%;
-  border: var(--s) white solid;
+  border: var(--xs) white solid;
   box-shadow: 0px 0px 8px var(--color-t-200);
   overflow: hidden;
+  mask: linear-gradient(-45deg, transparent, transparent 13.9512529279%, black 0, black 36.0487470721%, transparent 0, transparent 63.9512529279%, black 0, black 86.0487470721%, transparent 0, transparent);
+  mask-size: var(--xs) var(--xs);
 }
 main .col .friends:not(#comments) .friends-grid .person a:nth-child(1) {
   display: none;
@@ -639,10 +652,79 @@ main .col .friends:not(#comments) .friends-grid .person a:nth-child(2) img {
   margin: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   max-width: 100%;
   max-height: 100%;
   border-radius: 50%;
+}
+
+/*
+pre-footer section using heading
+comments has to be appended to bottom of screen due to inline table structure being incompatable
+*/
+main .col #comments {
+  display: flex;
+  flex-direction: column-reverse;
+  height: auto;
+}
+main .col #comments .inner {
+  padding: 0;
+  padding-top: var(--xl);
+}
+main .col #comments .inner > p {
+  font-size: 0;
+}
+main .col #comments .inner > p span:nth-of-type(2) {
+  font-size: var(--xxl);
+  mask: linear-gradient(-45deg, transparent, transparent 13.9512529279%, black 0, black 36.0487470721%, transparent 0, transparent 63.9512529279%, black 0, black 86.0487470721%, transparent 0, transparent);
+  mask-size: var(--xs) var(--xs);
+  color: var(--text-color);
+  text-wrap: nowrap;
+  display: block;
+}
+main .col #comments .inner > p span:nth-of-type(2)::after {
+  content: " COMMENTS";
+}
+main .col #comments .inner > p a {
+  font-size: var(--l);
+}
+main .col #comments .inner table {
+  display: contents;
+}
+main .col #comments .inner tbody {
+  display: flex;
+  flex-direction: column;
+}
+main .col #comments .inner tbody tr {
+  display: flex;
+  width: 100%;
+}
+main .col #comments .inner tbody tr td {
+  background: none;
+  border: none;
+}
+main .col #comments .inner tbody tr td:nth-child(1) {
+  width: fit-content;
+}
+main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(1) {
+  width: fit-content;
+}
+main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(1) p {
+  width: fit-content;
+}
+main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(2) {
+  display: none;
+}
+main .col #comments .inner tbody tr td:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+main .col #comments .inner tbody tr td:nth-child(2) p:not(:has(b a.text-link time)) {
+  width: 100%;
+}
+main .col #comments .inner tbody tr td:nth-child(2) {
+  /* supposed to block */
 }
 
 /*# sourceMappingURL=body-computer.css.map */
