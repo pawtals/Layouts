@@ -13,7 +13,8 @@ h1 {
   color: var(--text-color);
 }
 
-h2, h3 {
+h2,
+h3 {
   font-size: var(--xl);
   color: var(--text-color);
 }
@@ -126,7 +127,9 @@ html body .container .row.profile span[itemprop=name]::after {
 .col .general-about .details br {
   display: none;
 }
-.col .general-about .details { /* br in time.ago causing issue */ }
+.col .general-about .details {
+  /* br in time.ago causing issue */
+}
 
 /*
 shift first row of interactions on contact to be bound to hero
@@ -457,11 +460,113 @@ contact section
 /*
 moving up url & info to fixed so they aren't in the way
 */
-.url-info, .profile-info {
+.url-info,
+.profile-info {
   position: fixed !important;
   top: 0;
   left: 0;
   display: none !important; /* development */
+}
+
+/*
+general table sect
+*/
+.row.profile .col .table-section {
+  display: grid !important;
+  grid-template-rows: var(--xxl) 1fr;
+  height: auto !important;
+  border: none;
+}
+.row.profile .col .table-section .heading {
+  background: none;
+  position: relative;
+}
+.row.profile .col .table-section .heading h4 {
+  text-transform: uppercase;
+  font-size: var(--xxl);
+  z-index: 2;
+  text-wrap: nowrap;
+  letter-spacing: calc(var(--xs) * -1);
+}
+.row.profile .col .table-section .heading h4::before {
+  content: "// ";
+}
+.row.profile .col .table-section .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.table-section .inner tbody {
+  display: flex;
+  flex-direction: column;
+}
+.table-section .inner tbody tr {
+  padding-top: var(--xl);
+  display: flex;
+  padding-inline: var(--xxl) var(--xl);
+}
+.table-section .inner tbody tr:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.table-section .inner tbody tr td {
+  background: none;
+}
+.table-section .inner tbody tr td:nth-child(1) {
+  position: relative;
+  flex: 1;
+}
+.table-section .inner tbody tr td:nth-child(1) p {
+  font-size: var(--l);
+  text-transform: uppercase;
+  flex-direction: column;
+  font-weight: 800;
+  display: flex;
+  order: 1;
+}
+.table-section .inner tbody tr td:nth-child(1) p::after {
+  content: "";
+  background: left center/contain no-repeat url("https://i.ibb.co/YFQWqnXz/small-signature-1.png");
+  width: var(--xl);
+  height: var(--s);
+  margin-bottom: var(--xs);
+  order: -2;
+}
+.table-section .inner tbody tr td:nth-child(1) p::before {
+  content: "SECTION";
+  font-weight: 400;
+  font-size: var(--m);
+  background: var(--color-t-200);
+  width: fit-content;
+  padding: var(--xxs);
+  padding-left: 4ch;
+  order: -1;
+}
+.table-section .inner tbody tr td:nth-child(1)::after {
+  content: "";
+  width: var(--xxl);
+  height: var(--xxl);
+  background: left top/contain no-repeat url("https://i.ibb.co/HTgK5mG7/large-signature-xl.png");
+  display: inline-block;
+  margin-block: var(--xl) var(--xxl);
+}
+.table-section .inner tbody tr td:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  width: var(--xl);
+  height: var(--xl);
+  background: center/75% 75% no-repeat url("https://cdn-icons-png.freepik.com/512/64/64040.png"), var(--text-color);
+  filter: invert(1);
+  bottom: 0;
+  left: 0;
+}
+.table-section .inner tbody tr td:nth-child(2) {
+  flex: 3;
+}
+
+.table-section table,
+.table-section tbody {
+  display: contents;
 }
 
 /*# sourceMappingURL=body-computer.css.map */

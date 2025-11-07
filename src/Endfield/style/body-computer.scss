@@ -14,7 +14,8 @@ h1 {
     color: var(--text-color);
 }
 
-h2, h3 {
+h2,
+h3 {
     font-size: var(--xl);
     color: var(--text-color);
 }
@@ -46,7 +47,8 @@ Turn name span into hero section
 
 html body .container .row.profile span[itemprop="name"] {
     /* https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/kv.4584e64b.jpg */
-    background: center / cover url("https://images.freecreatives.com/wp-content/uploads/2016/03/White-Abstract-Wallpaper-1.jpg"); /* turn into var */
+    background: center / cover
+        url("https://images.freecreatives.com/wp-content/uploads/2016/03/White-Abstract-Wallpaper-1.jpg"); /* turn into var */
     position: relative;
     display: block;
     height: 100vh;
@@ -57,7 +59,7 @@ html body .container .row.profile span[itemprop="name"] {
         margin: 0;
         left: var(--xxl);
         top: calc(80% - var(--xxl));
-        translate: 0 calc(var(--m)*-1); /* add margin on absolute position */
+        translate: 0 calc(var(--m) * -1); /* add margin on absolute position */
         mix-blend-mode: soft-light;
         color: var(--text-color-secondary);
         z-index: 2;
@@ -87,7 +89,8 @@ html body .container .row.profile span[itemprop="name"] {
 
 .col .general-about {
     position: absolute !important;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100vh;
     .profile-pic {
@@ -126,7 +129,9 @@ html body .container .row.profile span[itemprop="name"] {
             content: ">> ";
         }
     }
-    br {display: none;} /* br in time.ago causing issue */
+    br {
+        display: none;
+    } /* br in time.ago causing issue */
 }
 
 /*
@@ -148,7 +153,7 @@ shift first row of interactions on contact to be bound to hero
             padding: var(--l) var(--l);
             font-size: var(--l);
             border-radius: 0.3rem;
-            box-shadow: 0px 0px 6px rgba(0,0,0, 0.4);
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
         }
 
         img {
@@ -202,8 +207,9 @@ Create milestone copy for mood | add splash art for effect and morph text
             max-width: 14ch;
 
             &::before {
-                content: '';
-                background: left center / contain no-repeat url("https://i.ibb.co/YFQWqnXz/small-signature-1.png");
+                content: "";
+                background: left center / contain no-repeat
+                    url("https://i.ibb.co/YFQWqnXz/small-signature-1.png");
                 position: absolute;
                 width: var(--xl);
                 height: var(--m);
@@ -218,20 +224,21 @@ Create milestone copy for mood | add splash art for effect and morph text
 
         /* image */
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             top: var(--m);
             right: 30%;
             height: calc(var(--xxl) * 6);
             width: calc(var(--xxl) * 6);
             mask: linear-gradient(180deg, white 40%, transparent 80%);
-            background: center / contain no-repeat url("https://endfield.wiki.gg/images/Gilberta_Splash_Art.png?57eaad");
+            background: center / contain no-repeat
+                url("https://endfield.wiki.gg/images/Gilberta_Splash_Art.png?57eaad");
             pointer-events: none;
         }
 
         /* section image */
         &::before {
-            content: '';
+            content: "";
             display: block;
             position: absolute;
             width: calc(var(--xxl) * 3);
@@ -243,8 +250,10 @@ Create milestone copy for mood | add splash art for effect and morph text
 
             background:
                 linear-gradient(180deg, transparent 60%, var(--color-ef-p)),
-                40% 30% / 300%  no-repeat url("https://endfield.wiki.gg/images/Angelina.png"),
-                left top / cover url("https://i.ibb.co/QFM36t7L/major-signature-1.png");
+                40% 30% / 300% no-repeat
+                    url("https://endfield.wiki.gg/images/Angelina.png"),
+                left top / cover
+                    url("https://i.ibb.co/QFM36t7L/major-signature-1.png");
         }
     } /* gut useless paragraph for psuedoelements :) */
 
@@ -269,16 +278,22 @@ Create milestone copy for mood | add splash art for effect and morph text
             flex-direction: column;
             text-transform: uppercase;
             &::after {
-                content: '';
+                content: "";
                 display: block;
                 height: 1rem;
                 width: 100%;
-                background: repeating-linear-gradient(45deg, var(--color-ef-p) 0px, var(--color-ef-p) 4px, var(--color-t) 4px, var(--color-t) 8px);
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--color-ef-p) 0px,
+                    var(--color-ef-p) 4px,
+                    var(--color-t) 4px,
+                    var(--color-t) 8px
+                );
                 margin-bottom: var(--xs);
             }
 
             &::before {
-                content: '';
+                content: "";
                 display: inline-block;
                 width: var(--xxl);
                 height: var(--xxl);
@@ -290,8 +305,9 @@ Create milestone copy for mood | add splash art for effect and morph text
         }
 
         &::after {
-            content: '';
-            background: bottom / contain no-repeat url("https://i.ibb.co/kFVXCTJ/large-signature.png");
+            content: "";
+            background: bottom / contain no-repeat
+                url("https://i.ibb.co/kFVXCTJ/large-signature.png");
             position: absolute;
             bottom: calc(var(--xxl) * 3);
             left: var(--xl);
@@ -300,8 +316,9 @@ Create milestone copy for mood | add splash art for effect and morph text
         }
 
         &::before {
-            content: '';
-            background: center / contain no-repeat url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/color-bar.1f0aa038.png");
+            content: "";
+            background: center / contain no-repeat
+                url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/color-bar.1f0aa038.png");
             position: absolute;
             bottom: calc(var(--xxl) * 2);
             left: var(--xl);
@@ -311,8 +328,11 @@ Create milestone copy for mood | add splash art for effect and morph text
     }
 
     &::before {
-        content: '';
-        background: center / contain url("https://icon-library.com/images/open-book-icon/open-book-icon-14.jpg"), var(--text-color);
+        content: "";
+        background:
+            center / contain
+                url("https://icon-library.com/images/open-book-icon/open-book-icon-14.jpg"),
+            var(--text-color);
         position: absolute;
         top: calc(var(--xxl) - var(--l));
         translate: calc(var(--m) * -1) -50%;
@@ -323,8 +343,9 @@ Create milestone copy for mood | add splash art for effect and morph text
     }
 
     &::after {
-        content: '';
-        background: center / contain no-repeat url('https://i.ibb.co/dsPrWh92/layout-motiff-signature.png');
+        content: "";
+        background: center / contain no-repeat
+            url("https://i.ibb.co/dsPrWh92/layout-motiff-signature.png");
         position: absolute;
         top: calc(var(--xxl) * 3);
         translate: calc(var(--m) * -1) -50%;
@@ -361,7 +382,7 @@ contact section
             text-transform: uppercase;
             z-index: 2;
             &::after {
-                content: 'WAYS OF CONTACTING ME';
+                content: "WAYS OF CONTACTING ME";
                 display: block;
                 font-size: var(--s);
                 font-weight: 400;
@@ -369,8 +390,9 @@ contact section
         }
 
         &::after {
-            content: '';
-            background: center bottom / contain no-repeat url('https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/section_divider_icon_lore.6968c414.png');
+            content: "";
+            background: center bottom / contain no-repeat
+                url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/section_divider_icon_lore.6968c414.png");
             width: calc(var(--xxl) * 1.8);
             height: calc(var(--xxl) * 2);
             position: absolute;
@@ -380,7 +402,7 @@ contact section
         }
 
         &::before {
-            content: '';
+            content: "";
             background: var(--color-ef-p);
             width: 100%;
             height: 70%;
@@ -417,29 +439,39 @@ contact section
 
         a {
             font-size: var(--m);
-            background: center / 100% no-repeat url('https://web-static.hg-cdn.com/endfield/special/creators-application/assets/imgs/title-divider.4806d1.png');
+            background: center / 100% no-repeat
+                url("https://web-static.hg-cdn.com/endfield/special/creators-application/assets/imgs/title-divider.4806d1.png");
             padding: var(--s);
             border-radius: var(--m);
             color: var(--text-color-secondary);
-            img{display: none;}
+            img {
+                display: none;
+            }
         }
 
         &::after {
-            content: '';
+            content: "";
             position: absolute;
-            top:0;
+            top: 0;
             left: 0;
             width: var(--l);
             height: var(--l);
-            background: center / contain no-repeat url('https://web-static.hg-cdn.com/endfield/special/creators-application/assets/imgs/title-icon-4.359920.png');
+            background: center / contain no-repeat
+                url("https://web-static.hg-cdn.com/endfield/special/creators-application/assets/imgs/title-icon-4.359920.png");
         }
 
         &::before {
-            content: 'URL';
+            content: "URL";
             color: var(--text-color-secondary);
             text-shadow: -2px 2px 6px rgb(from black r g b / 20%);
             font-size: var(--l);
-            background: repeating-linear-gradient(45deg, var(--color-t-200) 0px, var(--color-t-200) 4px, rgb(from var(--color-t-200) r g b / 50%) 4px, rgb(from var(--color-t-200) r g b / 50%) 8px);
+            background: repeating-linear-gradient(
+                45deg,
+                var(--color-t-200) 0px,
+                var(--color-t-200) 4px,
+                rgb(from var(--color-t-200) r g b / 50%) 4px,
+                rgb(from var(--color-t-200) r g b / 50%) 8px
+            );
             border-radius: var(--m);
             display: flex;
             justify-content: right;
@@ -449,12 +481,18 @@ contact section
     }
 
     &::after {
-        content: 'CONTACT ME';
+        content: "CONTACT ME";
         font-size: var(--l);
         position: absolute;
         right: 100%;
         writing-mode: vertical-lr;
-        background: repeating-linear-gradient(45deg, var(--color-t-200) 0px, var(--color-t-200) 2px, var(--color-t) 2px, var(--color-t) 4px);
+        background: repeating-linear-gradient(
+            45deg,
+            var(--color-t-200) 0px,
+            var(--color-t-200) 2px,
+            var(--color-t) 2px,
+            var(--color-t) 4px
+        );
         color: transparent;
         -webkit-background-clip: text;
         background-clip: text;
@@ -463,14 +501,20 @@ contact section
     }
 
     &::before {
-        content: 'CONTACT';
+        content: "CONTACT";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         font-weight: 800;
         font-size: var(--m);
-        background: repeating-linear-gradient(45deg, var(--color-ef-p) 0px, var(--color-ef-p) 3px, var(--color-t) 3px, var(--color-t) 6px);
+        background: repeating-linear-gradient(
+            45deg,
+            var(--color-ef-p) 0px,
+            var(--color-ef-p) 3px,
+            var(--color-t) 3px,
+            var(--color-t) 6px
+        );
         padding: var(--s) 0 var(--s) var(--m);
         box-sizing: border-box;
     }
@@ -480,8 +524,125 @@ contact section
 moving up url & info to fixed so they aren't in the way
 */
 
-.url-info, .profile-info {
+.url-info,
+.profile-info {
     position: fixed !important;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     display: none !important; /* development */
+}
+
+/*
+general table sect
+*/
+
+.row.profile .col .table-section {
+    display: grid !important;
+    grid-template-rows: var(--xxl) 1fr;
+    height: auto !important;
+    border: none;
+    .heading {
+        background: none;
+        position: relative;
+        h4 {
+            text-transform: uppercase;
+            font-size: var(--xxl);
+            z-index: 2;
+            text-wrap: nowrap;
+            letter-spacing: calc(var(--xs) * -1);
+            &::before {
+                content: "// ";
+            }
+        }
+    }
+    .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+.table-section .inner tbody {
+    display: flex;
+    flex-direction: column;
+    tr {
+        padding-top: var(--xl);
+        display: flex;
+        padding-inline: var(--xxl) var(--xl);
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        td {
+            background: none;
+        }
+
+        td:nth-child(1) {
+            position: relative;
+            flex: 1;
+
+            p {
+                font-size: var(--l);
+                text-transform: uppercase;
+                flex-direction: column;
+                font-weight: 800;
+                display: flex;
+                order: 1;
+                &::after {
+                    content: "";
+                    background: left center / contain no-repeat
+                        url("https://i.ibb.co/YFQWqnXz/small-signature-1.png");
+                    width: var(--xl);
+                    height: var(--s);
+                    margin-bottom: var(--xs);
+                    order: -2;
+                }
+
+                &::before {
+                    content: "SECTION";
+                    font-weight: 400;
+                    font-size: var(--m);
+                    background: var(--color-t-200);
+                    width: fit-content;
+                    padding: var(--xxs);
+                    padding-left: 4ch;
+                    order: -1;
+                }
+            }
+
+            &::after {
+                content: "";
+                width: var(--xxl);
+                height: var(--xxl);
+                background: left top / contain no-repeat
+                    url("https://i.ibb.co/HTgK5mG7/large-signature-xl.png");
+                display: inline-block;
+                margin-block: var(--xl) var(--xxl);
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: var(--xl);
+                height: var(--xl);
+                background:
+                    center / 75% 75% no-repeat
+                        url("https://cdn-icons-png.freepik.com/512/64/64040.png"),
+                    var(--text-color);
+                filter: invert(1);
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        td:nth-child(2) {
+            flex: 3;
+        }
+    }
+}
+
+.table-section table,
+.table-section tbody {
+    display: contents;
 }
