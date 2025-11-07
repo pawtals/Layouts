@@ -568,7 +568,7 @@ general table sect
     tr {
         padding-top: var(--xl);
         display: flex;
-        padding-inline: var(--xxl) var(--xl);
+        padding-inline: var(--xxl) var(--l);
 
         &:nth-child(even) {
             flex-direction: row-reverse;
@@ -645,4 +645,96 @@ general table sect
 .table-section table,
 .table-section tbody {
     display: contents;
+}
+
+/*
+remove blog & blurbs due to redundancy
+just use big interest sections with <a> tags to your content
+*/
+
+.blog-preview,
+.blurbs {
+    display: none !important;
+}
+
+/*
+friends display & amount
+*/
+
+main .col .friends:not(#comments) {
+    height: auto;
+    .heading {
+        display: none !important;
+    }
+    .inner {
+        padding: 0 !important;
+    }
+    .inner > p {
+        font-size: 0;
+        margin: 0;
+        width: 0;
+        span {
+            background: linear-gradient(
+                -45deg,
+                transparent,
+                transparent 13.9512529279%,
+                black 0,
+                black 36.0487470721%,
+                transparent 0,
+                transparent 63.9512529279%,
+                black 0,
+                black 86.0487470721%,
+                transparent 0,
+                transparent
+            );
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            font-size: calc(var(--xxl) * 2);
+            background-size: var(--xs) var(--xs);
+            position: absolute;
+            top: 0;
+            left: 0;
+            mask: linear-gradient(180deg, white, transparent);
+            z-index: 1;
+            &::after {
+                content: "FRIENDS";
+                display: inline-block;
+                margin-left: var(--xxl);
+            }
+        }
+    }
+    .friends-grid {
+        display: flex;
+        z-index: 2;
+        position: relative;
+        padding: var(--xl);
+        gap: var(--l);
+        align-items: center;
+        height: calc(var(--xxl) * 2);
+        .person {
+            padding: 0;
+            margin: 0;
+            width: var(--xxl);
+            height: var(--xxl);
+            border-radius: 50%;
+            border: var(--s) white solid;
+            box-shadow: 0px 0px 8px var(--color-t-200);
+            overflow: hidden;
+            a:nth-child(1) {
+                display: none;
+            }
+            a:nth-child(2) {
+                img {
+                    margin: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    max-width: 100%;
+                    max-height: 100%;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
 }
