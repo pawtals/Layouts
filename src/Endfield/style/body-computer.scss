@@ -415,108 +415,60 @@ contact section
     .inner {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        padding: var(--l) var(--l) var(--l) var(--xl);
+        justify-content: center;
+        align-items: center;
+        background: center / 20% no-repeat
+            url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/ring.5ce6e2bd.png");
     }
 }
 
 .contact .inner .f-row:not(:nth-child(1)) {
-    padding: var(--m);
-    padding-top: var(--xl);
-    background: var(--color-t);
-    display: flex;
-    height: 30%;
-    margin: 0;
     position: relative;
-    filter: drop-shadow(2px 2px 6px rgb(from black r g b / 40%));
-    gap: var(--m);
+    width: calc(var(--xxl) * 7);
+    height: calc(var(--xxl) * 2);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:nth-of-type(3)) {
+        width: calc(var(--xxl) * 4);
+    }
+
     .f-col {
-        padding: var(--m);
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        position: relative;
-
-        a {
-            font-size: var(--m);
-            background: center / 100% no-repeat
-                url("https://web-static.hg-cdn.com/endfield/special/creators-application/assets/imgs/title-divider.4806d1.png");
-            padding: var(--s);
-            border-radius: var(--m);
-            color: var(--text-color-secondary);
-            img {
-                display: none;
-            }
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: var(--l);
-            height: var(--l);
-            background: center / contain no-repeat
-                url("https://web-static.hg-cdn.com/endfield/special/creators-application/assets/imgs/title-icon-4.359920.png");
-        }
-
-        &::before {
-            content: "URL";
-            color: var(--text-color-secondary);
-            text-shadow: -2px 2px 6px rgb(from black r g b / 20%);
-            font-size: var(--l);
-            background: repeating-linear-gradient(
-                45deg,
-                var(--color-t-200) 0px,
-                var(--color-t-200) 4px,
-                rgb(from var(--color-t-200) r g b / 50%) 4px,
-                rgb(from var(--color-t-200) r g b / 50%) 8px
-            );
-            border-radius: var(--m);
-            display: flex;
-            justify-content: right;
-            padding-right: var(--m);
-            mask: linear-gradient(270deg, white, transparent 50%);
-        }
-    }
-
-    &::after {
-        content: "CONTACT ME";
-        font-size: var(--l);
-        position: absolute;
-        right: 100%;
-        writing-mode: vertical-lr;
-        background: repeating-linear-gradient(
-            45deg,
-            var(--color-t-200) 0px,
-            var(--color-t-200) 2px,
-            var(--color-t) 2px,
-            var(--color-t) 4px
-        );
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-        top: 0;
-        mask: linear-gradient(270deg, white, transparent);
-    }
-
-    &::before {
-        content: "CONTACT";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        font-weight: 800;
+        padding: var(--m) var(--l);
         font-size: var(--m);
-        background: repeating-linear-gradient(
-            45deg,
-            var(--color-ef-p) 0px,
-            var(--color-ef-p) 3px,
-            var(--color-t) 3px,
-            var(--color-t) 6px
-        );
-        padding: var(--s) 0 var(--s) var(--m);
-        box-sizing: border-box;
+        text-wrap: nowrap;
+        border-radius: 999px;
+        border: transparent solid var(--xxs);
+        outline: solid var(--xxs) var(--color-t-200);
+        background: linear-gradient(
+                -45deg,
+                transparent,
+                transparent 13.9512529279%,
+                var(--color-t-200) 0,
+                var(--color-t-200) 36.0487470721%,
+                transparent 0,
+                transparent 63.9512529279%,
+                var(--color-t-200) 0,
+                var(--color-t-200) 86.0487470721%,
+                transparent 0,
+                transparent
+            )
+            padding-box;
+        background-size: var(--xs) var(--xs);
+        a {
+            color: var(--text-color-secondary);
+            text-shadow:
+                0px 0px 4px var(--color-t-200),
+                0px 0px 4px var(--color-t-200),
+                0px 0px 4px var(--color-t-200),
+                0px 0px 4px var(--color-t-200);
+            /* harsher shadow */
+        }
+        img {
+            display: none;
+        }
     }
 }
 
