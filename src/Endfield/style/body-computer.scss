@@ -48,7 +48,7 @@ Turn name span into hero section
 html body .container .row.profile span[itemprop="name"] {
     /* https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/kv.4584e64b.jpg */
     background: center / cover
-        url("https://images.freecreatives.com/wp-content/uploads/2016/03/White-Abstract-Wallpaper-1.jpg"); /* turn into var */
+        url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/kv.4584e64b.jpg"); /* turn into var */
     position: relative;
     display: block;
     height: 100vh;
@@ -124,7 +124,10 @@ html body .container .row.profile span[itemprop="name"] {
     p {
         font-size: var(--s);
         color: var(--text-color-secondary);
-        filter: brightness(0.7);
+        filter: brightness(0.9);
+        img {
+            display: none;
+        }
         &::before {
             content: ">> ";
         }
@@ -521,6 +524,7 @@ general table sect
         padding-top: var(--xl);
         display: flex;
         padding-inline: var(--xxl) var(--l);
+        padding-bottom: var(--xxl);
 
         &:nth-child(even) {
             flex-direction: row-reverse;
@@ -723,10 +727,9 @@ main .col .friends:not(#comments) {
 
 /*
 pre-footer section using heading
-comments has to be appended to bottom of screen due to inline table structure being incompatable
 */
 
-main .col #comments {
+html main .col #comments {
     display: flex;
     flex-direction: column-reverse;
     height: auto;
@@ -768,41 +771,232 @@ main .col #comments {
             display: contents;
         }
         tbody {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, calc(var(--xxl) * 3));
+            justify-content: space-around;
+            gap: var(--l);
+            color: unset;
+            padding: var(--m);
             tr {
                 display: flex;
                 width: 100%;
+                height: calc(var(--xxl) * 4);
+                position: relative;
+                padding: var(--l) var(--m);
+                background: var(--text-color);
+                box-shadow: 1px 2px 8px var(--color-t-200);
+                border-radius: var(--m);
 
                 td {
                     background: none;
                     border: none;
+                    p {
+                        color: var(--text-color-secondary) !important;
+                    }
                 }
 
                 td:nth-child(1) {
-                    width: fit-content;
                     a:nth-child(1) {
-                        width: fit-content;
+                        font-size: var(--m);
+                        position: relative;
+                        z-index: 2;
                         p {
-                            width: fit-content;
+                            margin: 0;
                         }
                     }
 
                     a:nth-child(2) {
-                        display: none;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        z-index: 1;
+                        top: 0;
+                        left: 0;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            max-width: 100%;
+                            max-height: 100%;
+                            object-fit: cover;
+                            mask: radial-gradient(
+                                circle at 50% 50%,
+                                white,
+                                transparent 90%
+                            );
+                        }
                     }
                 }
 
                 td:nth-child(2) {
                     display: flex;
+                    flex-direction: column;
                     flex-wrap: wrap;
                     flex: 1;
-                    p:not(:has(b a.text-link time)) {
-                        width: 100%;
+                    position: relative;
+                    z-index: 2;
+
+                    .comment-replies {
+                        all: unset;
+                        order: 6;
                     }
-                    /* supposed to block */
+
+                    /* hide cause buttons are ugly AND REPLIES AND TIME */
+                    /*
+                    add hover animation on animator stylesheet
+                    */
+                    > a,
+                    > p:has(a),
+                    .comment-replies {
+                        display: none;
+                    }
+                    /* ordering buttons */
+
+                    > a,
+                    > p:has(a):not(:has(time)) {
+                        position: static !important;
+                    }
+                    > p:has(time) {
+                        order: 1;
+                    }
+                    > p:not(:has(a)):not(.report) {
+                        order: 2;
+                    }
+                    > a:has(button:not([form])) {
+                        order: 3;
+                    }
+                    > p.report {
+                        order: 4;
+                    }
+                    > a:has(button) {
+                        order: 5;
+                    }
+                    > a[href*="addcomment"] {
+                        order: 5;
+                    }
+                    > a[href*="deletecomment"] {
+                        order: 3;
+                    }
                 }
             }
+        }
+    }
+}
+
+/*
+escaping hell ^
+formatting text & before and after psuedoelements
+*/
+
+#comments .inner tbody {
+    tr {
+        flex-direction: column-reverse;
+    }
+    /* commentor name display */
+    tr td:nth-child(1) {
+        width: 100%;
+        border-top: var(--xxs) solid var(--color-t) !important;
+        padding-top: var(--m);
+        a:not(:has(img)) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--s);
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 20ch;
+                height: 6ch;
+                background: left center / contain no-repeat
+                    url("https://i.ibb.co/6cN0KZw0/ghost-logo.png");
+            }
+        }
+
+        p {
+            text-align: left !important;
+            max-width: 22ch;
+            height: 2ch;
+            overflow: hidden;
+        }
+    }
+
+    /* comment */
+    tr td:nth-child(2) {
+        justify-content: flex-end;
+        font-size: var(--m);
+        font-weight: 600;
+        opacity: 0.7; /* sorry */
+    }
+}
+
+/*
+deal with pagination
+*/
+
+html body .container .row.profile .col.right .friends#comments .pagination {
+    display: none !important;
+}
+
+/*
+pre-footer
+*/
+
+.friends#comments .heading {
+    border-bottom: var(--m) solid var(--color-t-100);
+    background: none;
+    position: relative;
+    height: calc(var(--xxl) * 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+        content: "";
+        background: center bottom / contain no-repeat
+            url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/subpage-title-construction.4e773940.png");
+        width: calc(var(--xxl) * 3);
+        height: calc(var(--xxl) * 2);
+        position: absolute;
+        right: var(--xxl);
+        bottom: 0;
+        z-index: 1;
+    }
+
+    &::before {
+        content: "";
+        background: var(--color-ef-p);
+        width: 100%;
+        height: 70%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    h4 {
+        display: contents;
+        &::before {
+            content: "";
+            width: calc(var(--xxl) * 4);
+            height: 70%;
+            position: absolute;
+            left: var(--xxl);
+            bottom: 0;
+            z-index: 1;
+            background: left center / 60% no-repeat
+                url("https://i.ibb.co/PvdbkFhx/sendoff-side-info.png");
+        }
+
+        &::after {
+            content: "";
+            width: calc(var(--xxl) * 4);
+            height: 70%;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            translate: -50% 0;
+            z-index: 1;
+            background: center / contain no-repeat
+                url("https://i.ibb.co/nMdCkFkr/sendoff.png");
         }
     }
 }

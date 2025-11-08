@@ -44,7 +44,7 @@ Turn name span into hero section
 */
 html body .container .row.profile span[itemprop=name] {
   /* https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/kv.4584e64b.jpg */
-  background: center/cover url("https://images.freecreatives.com/wp-content/uploads/2016/03/White-Abstract-Wallpaper-1.jpg"); /* turn into var */
+  background: center/cover url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/kv.4584e64b.jpg"); /* turn into var */
   position: relative;
   display: block;
   height: 100vh;
@@ -119,7 +119,10 @@ html body .container .row.profile span[itemprop=name]::after {
 .col .general-about .details p {
   font-size: var(--s);
   color: var(--text-color-secondary);
-  filter: brightness(0.7);
+  filter: brightness(0.9);
+}
+.col .general-about .details p img {
+  display: none;
 }
 .col .general-about .details p::before {
   content: ">> ";
@@ -462,6 +465,7 @@ general table sect
   padding-top: var(--xl);
   display: flex;
   padding-inline: var(--xxl) var(--l);
+  padding-bottom: var(--xxl);
 }
 .table-section .inner tbody tr:nth-child(even) {
   flex-direction: row-reverse;
@@ -617,21 +621,20 @@ main .col .friends:not(#comments) .friends-grid .person a:nth-child(2) img {
 
 /*
 pre-footer section using heading
-comments has to be appended to bottom of screen due to inline table structure being incompatable
 */
-main .col #comments {
+html main .col #comments {
   display: flex;
   flex-direction: column-reverse;
   height: auto;
 }
-main .col #comments .inner {
+html main .col #comments .inner {
   padding: 0;
   padding-top: var(--xl);
 }
-main .col #comments .inner > p {
+html main .col #comments .inner > p {
   font-size: 0;
 }
-main .col #comments .inner > p span:nth-of-type(2) {
+html main .col #comments .inner > p span:nth-of-type(2) {
   font-size: var(--xxl);
   mask: linear-gradient(-45deg, transparent, transparent 13.9512529279%, black 0, black 36.0487470721%, transparent 0, transparent 63.9512529279%, black 0, black 86.0487470721%, transparent 0, transparent);
   mask-size: var(--xs) var(--xs);
@@ -639,49 +642,222 @@ main .col #comments .inner > p span:nth-of-type(2) {
   text-wrap: nowrap;
   display: block;
 }
-main .col #comments .inner > p span:nth-of-type(2)::after {
+html main .col #comments .inner > p span:nth-of-type(2)::after {
   content: " COMMENTS";
 }
-main .col #comments .inner > p a {
+html main .col #comments .inner > p a {
   font-size: var(--l);
 }
-main .col #comments .inner table {
+html main .col #comments .inner table {
   display: contents;
 }
-main .col #comments .inner tbody {
-  display: flex;
-  flex-direction: column;
+html main .col #comments .inner tbody {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, calc(var(--xxl) * 3));
+  justify-content: space-around;
+  gap: var(--l);
+  color: unset;
+  padding: var(--m);
 }
-main .col #comments .inner tbody tr {
+html main .col #comments .inner tbody tr {
   display: flex;
   width: 100%;
+  height: calc(var(--xxl) * 4);
+  position: relative;
+  padding: var(--l) var(--m);
+  background: var(--text-color);
+  box-shadow: 1px 2px 8px var(--color-t-200);
+  border-radius: var(--m);
 }
-main .col #comments .inner tbody tr td {
+html main .col #comments .inner tbody tr td {
   background: none;
   border: none;
 }
-main .col #comments .inner tbody tr td:nth-child(1) {
-  width: fit-content;
+html main .col #comments .inner tbody tr td p {
+  color: var(--text-color-secondary) !important;
 }
-main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(1) {
-  width: fit-content;
+html main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(1) {
+  font-size: var(--m);
+  position: relative;
+  z-index: 2;
 }
-main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(1) p {
-  width: fit-content;
+html main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(1) p {
+  margin: 0;
 }
-main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(2) {
-  display: none;
+html main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
 }
-main .col #comments .inner tbody tr td:nth-child(2) {
+html main .col #comments .inner tbody tr td:nth-child(1) a:nth-child(2) img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  mask: radial-gradient(circle at 50% 50%, white, transparent 90%);
+}
+html main .col #comments .inner tbody tr td:nth-child(2) {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   flex: 1;
+  position: relative;
+  z-index: 2;
 }
-main .col #comments .inner tbody tr td:nth-child(2) p:not(:has(b a.text-link time)) {
+html main .col #comments .inner tbody tr td:nth-child(2) .comment-replies {
+  all: unset;
+  order: 6;
+}
+html main .col #comments .inner tbody tr td:nth-child(2) {
+  /* hide cause buttons are ugly AND REPLIES AND TIME */
+  /*
+  add hover animation on animator stylesheet
+  */
+}
+html main .col #comments .inner tbody tr td:nth-child(2) > a,
+html main .col #comments .inner tbody tr td:nth-child(2) > p:has(a),
+html main .col #comments .inner tbody tr td:nth-child(2) .comment-replies {
+  display: none;
+}
+html main .col #comments .inner tbody tr td:nth-child(2) {
+  /* ordering buttons */
+}
+html main .col #comments .inner tbody tr td:nth-child(2) > a,
+html main .col #comments .inner tbody tr td:nth-child(2) > p:has(a):not(:has(time)) {
+  position: static !important;
+}
+html main .col #comments .inner tbody tr td:nth-child(2) > p:has(time) {
+  order: 1;
+}
+html main .col #comments .inner tbody tr td:nth-child(2) > p:not(:has(a)):not(.report) {
+  order: 2;
+}
+html main .col #comments .inner tbody tr td:nth-child(2) > a:has(button:not([form])) {
+  order: 3;
+}
+html main .col #comments .inner tbody tr td:nth-child(2) > p.report {
+  order: 4;
+}
+html main .col #comments .inner tbody tr td:nth-child(2) > a:has(button) {
+  order: 5;
+}
+html main .col #comments .inner tbody tr td:nth-child(2) > a[href*=addcomment] {
+  order: 5;
+}
+html main .col #comments .inner tbody tr td:nth-child(2) > a[href*=deletecomment] {
+  order: 3;
+}
+
+/*
+escaping hell ^
+formatting text & before and after psuedoelements
+*/
+#comments .inner tbody tr {
+  flex-direction: column-reverse;
+}
+#comments .inner tbody {
+  /* commentor name display */
+}
+#comments .inner tbody tr td:nth-child(1) {
   width: 100%;
+  border-top: var(--xxs) solid var(--color-t) !important;
+  padding-top: var(--m);
 }
-main .col #comments .inner tbody tr td:nth-child(2) {
-  /* supposed to block */
+#comments .inner tbody tr td:nth-child(1) a:not(:has(img)) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s);
+}
+#comments .inner tbody tr td:nth-child(1) a:not(:has(img))::before {
+  content: "";
+  display: inline-block;
+  width: 20ch;
+  height: 6ch;
+  background: left center/contain no-repeat url("https://i.ibb.co/6cN0KZw0/ghost-logo.png");
+}
+#comments .inner tbody tr td:nth-child(1) p {
+  text-align: left !important;
+  max-width: 22ch;
+  height: 2ch;
+  overflow: hidden;
+}
+#comments .inner tbody {
+  /* comment */
+}
+#comments .inner tbody tr td:nth-child(2) {
+  justify-content: flex-end;
+  font-size: var(--m);
+  font-weight: 600;
+  opacity: 0.7; /* sorry */
+}
+
+/*
+deal with pagination
+*/
+html body .container .row.profile .col.right .friends#comments .pagination {
+  display: none !important;
+}
+
+/*
+pre-footer
+*/
+.friends#comments .heading {
+  border-bottom: var(--m) solid var(--color-t-100);
+  background: none;
+  position: relative;
+  height: calc(var(--xxl) * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.friends#comments .heading::after {
+  content: "";
+  background: center bottom/contain no-repeat url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/subpage-title-construction.4e773940.png");
+  width: calc(var(--xxl) * 3);
+  height: calc(var(--xxl) * 2);
+  position: absolute;
+  right: var(--xxl);
+  bottom: 0;
+  z-index: 1;
+}
+.friends#comments .heading::before {
+  content: "";
+  background: var(--color-ef-p);
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.friends#comments .heading h4 {
+  display: contents;
+}
+.friends#comments .heading h4::before {
+  content: "";
+  width: calc(var(--xxl) * 4);
+  height: 70%;
+  position: absolute;
+  left: var(--xxl);
+  bottom: 0;
+  z-index: 1;
+  background: left center/60% no-repeat url("https://i.ibb.co/PvdbkFhx/sendoff-side-info.png");
+}
+.friends#comments .heading h4::after {
+  content: "";
+  width: calc(var(--xxl) * 4);
+  height: 70%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  translate: -50% 0;
+  z-index: 1;
+  background: center/contain no-repeat url("https://i.ibb.co/nMdCkFkr/sendoff.png");
 }
 
 /*# sourceMappingURL=body-computer.css.map */
