@@ -1,5 +1,9 @@
 .container {
-  width: 100% !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
-/*# sourceMappingURL=body.css.map */
+.column {
+  flex: 1 1 250px;
+}
