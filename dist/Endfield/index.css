@@ -1,5 +1,5 @@
-@import url("https://pawtals.github.io/Layouts/dist/Endfield/style/body-computer.css") not screen and (orientation: portrait);
-@import url("https://pawtals.github.io/Layouts/dist/Endfield/style/body-phone.css") screen and (orientation: portrait);
+@import url("http://localhost:57391/dist/Endfield/style/body-computer.css") not screen and (orientation: portrait);
+@import url("http://localhost:57391/dist/Endfield/style/body-phone.css") screen and (orientation: portrait);
 body main,
 body footer {
   background: none;
