@@ -31,12 +31,15 @@ span[itemprop=name],
 /*
  * Focus
  */
-#a:focus,
-#b:focus,
-#c:focus,
-#d:focus,
-#e:focus {
-  color: red;
+div#a,
+div#b,
+div#c,
+div#d,
+div#e {
+  display: none;
+  &:target {
+    display: inherit;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
