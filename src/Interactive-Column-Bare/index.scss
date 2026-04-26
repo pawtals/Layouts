@@ -1,0 +1,46 @@
+html .container {
+    .col {
+        display: contents;
+    }
+
+    .profile {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 3ch repeat(5, auto);
+    }
+}
+
+span[itemprop="name"],
+.general-about,
+.mood,
+.table-section:has(.retro-player),
+.url-info,
+.contact {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/*
+ * Blurb section
+ */
+
+.blurbs {
+    grid-row: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+/*
+ * Focus
+ */
+
+div#a,
+div#b,
+div#c,
+div#d,
+div#e {
+    display: none;
+    &:target {
+        display: inherit;
+    }
+}
