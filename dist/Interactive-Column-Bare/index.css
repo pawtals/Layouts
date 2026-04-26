@@ -1,12 +1,10 @@
-html .container {
-  .col {
-    display: contents;
-  }
-  .profile {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-rows: 3ch repeat(5, auto);
-  }
+html .container .col {
+  display: contents;
+}
+html .container .profile {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 3ch repeat(5, auto);
 }
 
 span[itemprop=name],
@@ -37,9 +35,13 @@ div#c,
 div#d,
 div#e {
   display: none;
-  &:target {
-    display: inherit;
-  }
+}
+div#a:target,
+div#b:target,
+div#c:target,
+div#d:target,
+div#e:target {
+  display: inherit;
 }
 
 /*# sourceMappingURL=index.css.map */
