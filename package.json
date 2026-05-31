@@ -1,5 +1,5 @@
 {
-  "name": "@SpaceHey-Layouts",
+  "name": "SpaceHey-Layouts",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,8 +12,5 @@
   "packageManager": "pnpm@10.18.0",
   "devDependencies": {
     "sass": "^1.93.2"
-  },
-  "dependencies": {
-    "live-server": "^1.2.2"
   }
 }

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Recurse \"C:\\\\Users\\\\mocha\\\\Documents\\\\profile\\\\Layouts\\\\dist\\\\Endfield\\\\Assets\\\\\" | Select-Object FullName, Name)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\mocha\\\\Documents\\\\profile\\\\Layouts\\\\dist\\\\Endfield\\\\Assets\" -Recurse | ForEach-Object { $_.FullName })"
+    ]
+  }
+}
