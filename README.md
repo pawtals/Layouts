@@ -1,2 +1,3 @@
-# Spacehey Layouts
-Repository to host static compiled CSS files.
+# Napoleon Layouts
+Source code and compiled files for napo.to, currently hosts Endfield layout.
+https://napo.to/blog/entry.php?id=5731
