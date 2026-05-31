@@ -105,6 +105,7 @@ body .container .row.profile > * {
     --asset-deco-right: url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/deco-right.0602d8cc.jpg");
 }
 
+@supports (container-type: inline-size) {
 @media (min-width: 1440px) and (orientation: landscape) {
     /* .col > * {
         outline: 4px solid black !important;
@@ -146,8 +147,10 @@ body .container .row.profile > * {
                     margin: 0;
                     padding: 0;
                     display: flex;
+                    font-size: 0;
                     flex-direction: column;
                     align-items: center;
+                    gap: var(--xs);
                     // decorations
 
                     &::before {
@@ -1435,8 +1438,8 @@ pre-footer section using heading
                     position: absolute;
                     bottom: 0;
                     right: var(--xxl);
-                    height: 26rem;
-                    width: 26rem;
+                    height: calc(var(--xxl) * 2.5);
+                    width: calc(var(--xxl) * 2.5);
                     background: 100% 100% / contain no-repeat
                         var(--asset-pumper);
                     z-index: 3;
@@ -1479,7 +1482,7 @@ pre-footer section using heading
                         background: var(--color-t);
                         height: var(--xl);
                         padding: var(--s) 0 0 var(--s);
-                        width: 80%;
+                        width: calc(var(--xxl) * 8);
                     }
                 }
 
@@ -1952,3 +1955,4 @@ pre-footer
         display: contents;
     }
 }
+} // @supports (container-type: inline-size)

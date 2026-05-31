@@ -1,0 +1,234 @@
+@use "sass:color";
+
+$color-ef-p: #fffa00;
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap");
+
+:root {
+    --color-ef-p: #{$color-ef-p};
+    --color-ef-p-dark: #{color.adjust($color-ef-p, $lightness: -20%)};
+    --color-t: #ffffff;
+    --color-t-100: #f0f0f0;
+    --color-t-200: #a0a0a0;
+    --color-t-300: #505050;
+    --color-t-400: #202020;
+    --color-t-secondary: #101010;
+    --text-color: #191919;
+    --text-color-secondary: #ffffff;
+    /* signature assets */
+    --asset-small-sig: url("https://i.ibb.co/Jjp7r5Qt/Small-Signature.png");
+    --asset-major-sig-a: url("https://i.ibb.co/5WMf1SKg/Major-Signature-A.png");
+    --asset-major-sig-b: url("https://i.ibb.co/pvjWk2z7/Major-Signature-B.png");
+    --asset-large-sig: url("https://i.ibb.co/HpXmtJs2/Large-Sig.png");
+    --asset-large-sig-xl: url("https://i.ibb.co/SXYP42vL/Large-Sig-XL.png");
+    --asset-layout-motiff: url("https://i.ibb.co/5XNr20bs/layout-motiff-signature.png");
+    --asset-friend-header: url("https://i.ibb.co/RT6TjKs1/Friend-Header.png");
+    --asset-comment-dec: url("https://i.ibb.co/mVYBTqKt/Comment-Decoration.png");
+    --asset-comment-header-icon: url("https://i.ibb.co/Y4dhsxLY/Comment-Header-Icon.png");
+    --asset-comment-icon: url("https://i.ibb.co/mrPfpdW4/Comment-Icon.png");
+    --asset-sendoff: url("https://i.ibb.co/kVcDWp5d/Sendoff.png");
+    --asset-sendoff-a: url("https://i.ibb.co/ynzs4Rq9/Sendoff-A.png");
+    --asset-sendoff-b: url("https://i.ibb.co/Vcsnzjkc/Sendoff-B.png");
+    --asset-h1-decorator: url("https://i.ibb.co/TMcZVL6h/H1-Decorator.png");
+    --asset-comment-content-dec: url("https://i.ibb.co/bM3kF5ZC/Comment-Content-Decoration.png");
+    --asset-mood-before-1: url("https://i.ibb.co/PZKWYgd8/Mood-Before1.png");
+    --asset-mood-before-2: url("https://i.ibb.co/pvLvN1hS/Mood-Before2.png");
+    --asset-mood-icon: url("https://i.ibb.co/B2Y5ngRG/Mood-Icon.png");
+    --asset-status-icon: url("https://i.ibb.co/4RR1sg0P/Status-Icon.png");
+    --asset-you-icon: url("https://i.ibb.co/BvJftHk/You-Icon.png");
+    --asset-online-icon: url("https://i.ibb.co/PGySZcZM/onlineicon.png");
+    --asset-wide-sig: url("https://i.ibb.co/LdJW45CY/widesignature.png");
+    --asset-sidebar-sig: url("https://i.ibb.co/GfSfn33Z/Sidebar-Signature.png");
+    --asset-logo-replace: url("https://i.ibb.co/ccTh8nd0/Logo-Replace.png");
+    --asset-deco-socials: url("https://i.ibb.co/Y753m9J3/Decoration-Socials.png");
+    --asset-musicbox: url("https://i.ibb.co/dshjJNDq/musicbox.png");
+    --asset-music-inner: url("https://i.ibb.co/DH31Hdb3/Music-Inner-Image.png");
+    --asset-auster-identifier: url("https://i.ibb.co/kgp4jcPh/Auster-Indentifier.png");
+    --asset-endfield-logo-sig: url("https://i.ibb.co/wNCRff5D/Endfield-Logo-Signature.png");
+    /* endfield cdn assets */
+    --asset-supporter: url("https://i.ibb.co/s96Mvzx7/Supporter.png");
+    --asset-button-texture: url("https://i.ibb.co/Q34F0rd0/button-texture-aac73492.png");
+    --asset-kv: url("https://i.ibb.co/Z9RbCXc/kv-4584e64b.jpg");
+    --asset-kv-v1d2: url("https://i.ibb.co/yH26wwj/kv-v1d2-f352a0f9.jpg");
+    --asset-title-bg-v1d2: url("https://i.ibb.co/0gYPHh9/title-bg-v1d2-pc-be7fa2b9.png");
+    --asset-color-bar: url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/color-bar.1f0aa038.png");
+    --asset-card-bg: url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/card-bg.28c79684.jpg");
+    --asset-points-bg: url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/points-bg.f3b559e8.png");
+    --asset-pumper: url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/subpage-title-pumper.86938bc4.png");
+    --asset-construction: url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/subpage-title-construction.4e773940.png");
+    --asset-deco-rt: url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/subpage-deco-rt.6fce5d04.png");
+    --asset-gilberta: url("https://endfield.wiki.gg/images/Gilberta_Splash_Art.png?57eaad");
+    --asset-angelina: url("https://endfield.wiki.gg/images/Angelina.png");
+    --asset-open-book: url("https://icon-library.com/images/open-book-icon/open-book-icon-14.jpg");
+    --asset-section-icon: url("https://cdn-icons-png.freepik.com/512/64/64040.png");
+    --asset-deco-right: url("https://web-static.hg-cdn.com/endfield/official-v4/_next/static/media/deco-right.0602d8cc.jpg");
+}
+
+html,
+html body {
+    font-family: "Noto Sans SC", sans-serif !important;
+}
+
+// Notice always exists so display:none can target it when main layout is active
+body::before {
+    content: "Fallback stylesheet loaded, your browser does not support container-type: inline-size.\A     |\A 1   |  @supports (container-type: inline-size) {\A     |              ^\A src\\endfield-fallback.scss  root stylesheet\A\A Help & info:  https://napo.to/blog/entry.php?id=5731\A GitHub:       https://github.com/pawtals/layouts\A Contact:      discord.com@velvetdawns  /  napo.to@VVDS  /  amnextzed@gmail.com";
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    background: var(--color-t-400);
+    font-family:
+        "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+        "Droid Sans Mono", monospace;
+    font-size: clamp(0.5rem, 1.5vh, 0.8rem);
+    white-space: pre;
+    text-align: left;
+    color: var(--color-t-100);
+    padding-inline: 1em;
+    padding-block: 1rem;
+    border-left: 3px solid #fffa00;
+    pointer-events: none;
+    z-index: 2;
+}
+
+// CQ supported → switch notice to screen-size error
+@supports (container-type: inline-size) {
+    body::before {
+        content: "Error: media query condition not met.\A     |\A 1   |  @media (min-width: 1440px) and (orientation: landscape) {\A     |          ^\A src\\endfield-fallback.scss  root stylesheet\A\A Screen must be at least 1440px wide and in landscape orientation.\A\A Help & info:  https://napo.to/blog/entry.php?id=5731\A GitHub:       https://github.com/pawtals/layouts\A Contact:      discord.com@velvetdawns  /  napo.to@VVDS  /  amnextzed@gmail.com";
+        border-left-color: #ff8800;
+    }
+
+    // Both conditions met → main layout active, hide notice
+    @media (min-width: 1440px) and (orientation: landscape) {
+        body::before {
+            display: none;
+        }
+    }
+}
+
+// All fallback theming in a mixin to avoid duplication
+@mixin fallback-theme {
+    body {
+        background-color: var(--color-t-secondary) !important;
+        background-image: var(--asset-kv-v1d2);
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    .container {
+        background: var(--color-t);
+    }
+
+    html .container .url-info {
+        background: var(--color-t);
+        color: var(--text-color);
+        border-color: var(--color-ef-p);
+        a { color: var(--text-color); }
+    }
+
+    nav .top {
+        background: var(--color-t) !important;
+        color: var(--text-color) !important;
+    }
+
+    nav .top .left img {
+        content: var(--asset-logo-replace);
+    }
+
+    nav .links {
+        background: var(--color-t-400) !important;
+    }
+
+    nav .links a {
+        color: var(--color-t) !important;
+    }
+
+    .profile .blurbs .heading,
+    .profile .friends .heading {
+        background: var(--color-ef-p) !important;
+        color: var(--text-color) !important;
+    }
+
+    .profile .contact .heading,
+    .profile .table-section .heading,
+    .home-actions .heading,
+    .setting-section .heading {
+        background: var(--color-ef-p) !important;
+        color: var(--text-color) !important;
+    }
+
+    .profile .contact,
+    .profile .table-section,
+    .home-actions,
+    .setting-section {
+        border-color: var(--color-ef-p) !important;
+    }
+
+    .profile .blurbs,
+    .profile .friends {
+        border-color: var(--color-ef-p-dark) !important;
+    }
+
+    .comments-table td:first-child,
+    .music-table td:first-child {
+        background: var(--color-t-400) !important;
+        color: var(--color-t) !important;
+    }
+
+    .comments-table td,
+    .music-table td {
+        background: var(--color-t-100) !important;
+    }
+
+    .sidebar-table-h2,
+    .contact-box h2 {
+        background: var(--color-t-400) !important;
+    }
+
+    .contact-box {
+        border-color: var(--color-t-400) !important;
+    }
+
+    .sidebar-table-header {
+        background-color: var(--color-t-200) !important;
+        color: var(--text-color) !important;
+    }
+
+    .sidebar-table-data {
+        background-color: var(--color-t-100) !important;
+    }
+
+    h1::after {
+        content: "";
+        display: block;
+        height: 1.5em;
+        background: left center / auto 100% no-repeat var(--asset-h1-decorator);
+        opacity: 0.6;
+        margin-top: 4px;
+    }
+
+    img[title="Supporter"] {
+        content: var(--asset-supporter);
+    }
+
+    body footer {
+        background: var(--color-t-secondary) !important;
+        color: var(--color-t) !important;
+        a { color: var(--color-ef-p) !important; }
+    }
+}
+
+// Apply theming only when the main layout is NOT active
+
+// Case 1: browser has no container query support
+@supports not (container-type: inline-size) {
+    @include fallback-theme;
+}
+
+// Case 2: CQ supported but screen too small / portrait
+@supports (container-type: inline-size) {
+    @media (max-width: 1439px), (orientation: portrait) {
+        @include fallback-theme;
+    }
+}
